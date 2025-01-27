@@ -1,0 +1,411 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "creation": "2025-01-25 01:18:58.870370",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "graph_section",
+  "d3js",
+  "spt_info_section",
+  "doc_num",
+  "doc_tracing_number",
+  "status",
+  "column_break_lswq",
+  "customer_name",
+  "type",
+  "cost_breakdown_section",
+  "cbd_items",
+  "section_break_hdxj",
+  "quantity",
+  "column_break_zraw",
+  "uom",
+  "column_break_ifsg",
+  "unit_price",
+  "column_break_nkil",
+  "cbd_amount",
+  "sales_quotation_section",
+  "initial_sq_column",
+  "sq_init_id",
+  "init_sq_items",
+  "sq_init_amount",
+  "final_sq_column",
+  "sq_final_id",
+  "final_sq_items",
+  "sq_final_amount",
+  "section_break_adxy",
+  "column_break_mbqi",
+  "_profit",
+  "column_break_bqrm",
+  "profit_amount",
+  "column_break_vlez",
+  "discount",
+  "column_break_cave",
+  "discount_amount",
+  "section_break_tegn",
+  "column_break_chfs",
+  "column_break_alpk",
+  "column_break_tnba",
+  "percent_margin_sq_cbd",
+  "column_break_rust",
+  "amount_margin_sq_cbd",
+  "sales_order_section",
+  "total_consignment",
+  "column_break_vfkw",
+  "fee_customer",
+  "column_break_hvbs",
+  "miscellaneous_expenses",
+  "column_break_dknw",
+  "sales_insentive",
+  "section_break_mwdh",
+  "column_break_rxbd",
+  "column_break_adwn",
+  "column_break_hprm",
+  "_margin",
+  "column_break_ulmj",
+  "net_margin"
+ ],
+ "fields": [
+  {
+   "bold": 1,
+   "fieldname": "doc_num",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Doc. Num.",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_lswq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Type",
+   "options": "Project\nOutsourcing\nTrading"
+  },
+  {
+   "fieldname": "spt_info_section",
+   "fieldtype": "Section Break",
+   "label": "SPTC Info"
+  },
+  {
+   "fieldname": "cost_breakdown_section",
+   "fieldtype": "Section Break",
+   "hide_border": 1,
+   "label": "Cost Breakdown"
+  },
+  {
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "label": "Quantity",
+   "precision": "2"
+  },
+  {
+   "fieldname": "column_break_ifsg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "UoM",
+   "options": "UOM"
+  },
+  {
+   "fieldname": "column_break_zraw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "fieldname": "unit_price",
+   "fieldtype": "Currency",
+   "label": "Unit Price"
+  },
+  {
+   "fieldname": "column_break_nkil",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sales_quotation_section",
+   "fieldtype": "Section Break",
+   "hide_border": 1,
+   "label": "Sales Quotation"
+  },
+  {
+   "fieldname": "sq_init_amount",
+   "fieldtype": "Currency",
+   "label": "Amount"
+  },
+  {
+   "bold": 1,
+   "fieldname": "sq_final_amount",
+   "fieldtype": "Currency",
+   "label": "Amount"
+  },
+  {
+   "fieldname": "cbd_items",
+   "fieldtype": "Table",
+   "label": "CBD Items",
+   "options": "CBD Sheet for SPT"
+  },
+  {
+   "fieldname": "section_break_hdxj",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "sq_init_id",
+   "fieldtype": "Data",
+   "label": "SQ ID"
+  },
+  {
+   "fieldname": "sq_final_id",
+   "fieldtype": "Data",
+   "label": "SQ ID"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "in_standard_filter": 1,
+   "label": "Status"
+  },
+  {
+   "fieldname": "initial_sq_column",
+   "fieldtype": "Column Break",
+   "label": "Proposed SQ"
+  },
+  {
+   "fieldname": "final_sq_column",
+   "fieldtype": "Column Break",
+   "label": "Accepted SQ"
+  },
+  {
+   "fieldname": "section_break_adxy",
+   "fieldtype": "Section Break",
+   "hide_border": 1
+  },
+  {
+   "fieldname": "column_break_mbqi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_bqrm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_vlez",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_cave",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "description": "SQ to CBD",
+   "fieldname": "amount_margin_sq_cbd",
+   "fieldtype": "Currency",
+   "label": "Gross Margin",
+   "precision": "2"
+  },
+  {
+   "bold": 1,
+   "description": "SQ to CBD",
+   "fieldname": "percent_margin_sq_cbd",
+   "fieldtype": "Percent",
+   "label": "% Margin",
+   "precision": "2"
+  },
+  {
+   "fieldname": "init_sq_items",
+   "fieldtype": "Table",
+   "options": "CBD Sheet for SPT"
+  },
+  {
+   "fieldname": "final_sq_items",
+   "fieldtype": "Table",
+   "options": "CBD Sheet for SPT"
+  },
+  {
+   "fieldname": "discount",
+   "fieldtype": "Percent",
+   "label": "% Discount",
+   "precision": "2"
+  },
+  {
+   "fieldname": "discount_amount",
+   "fieldtype": "Currency",
+   "label": "Discount Amount"
+  },
+  {
+   "fieldname": "sales_order_section",
+   "fieldtype": "Section Break",
+   "hide_border": 1,
+   "label": "Sales Order"
+  },
+  {
+   "fieldname": "sales_insentive",
+   "fieldtype": "Currency",
+   "label": "Sales Insentive"
+  },
+  {
+   "fieldname": "fee_customer",
+   "fieldtype": "Currency",
+   "label": "Fee Customer"
+  },
+  {
+   "fieldname": "column_break_vfkw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_hvbs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_dknw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Total Uang Titip",
+   "fieldname": "total_consignment",
+   "fieldtype": "Currency",
+   "label": "Total Consignment"
+  },
+  {
+   "description": "Biaya lain-lain",
+   "fieldname": "miscellaneous_expenses",
+   "fieldtype": "Currency",
+   "label": "Miscellaneous expenses"
+  },
+  {
+   "bold": 1,
+   "fieldname": "net_margin",
+   "fieldtype": "Currency",
+   "label": "Net Margin"
+  },
+  {
+   "bold": 1,
+   "description": "SO to CBD",
+   "fieldname": "_margin",
+   "fieldtype": "Percent",
+   "label": "% Margin",
+   "precision": "2"
+  },
+  {
+   "fieldname": "_profit",
+   "fieldtype": "Percent",
+   "label": "% Profit",
+   "precision": "2"
+  },
+  {
+   "fieldname": "profit_amount",
+   "fieldtype": "Currency",
+   "label": "Profit Amount"
+  },
+  {
+   "fieldname": "graph_section",
+   "fieldtype": "Section Break",
+   "label": "Dashboard"
+  },
+  {
+   "fieldname": "d3js",
+   "fieldtype": "HTML",
+   "options": "<div class=\"sptc-sankey-d3js\" id=\"sptc-sankey-d3js\"></div>",
+   "width": "100%"
+  },
+  {
+   "bold": 1,
+   "fieldname": "cbd_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Amount"
+  },
+  {
+   "fieldname": "section_break_tegn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_chfs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_alpk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_tnba",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_rust",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_mwdh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_rxbd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_adwn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_hprm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_ulmj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "doc_tracing_number",
+   "fieldtype": "Data",
+   "label": "Doc. Tracing Number"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-27 22:35:25.090732",
+ "modified_by": "Administrator",
+ "module": "Navi for SHI",
+ "name": "Sales Pipeline Control",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "doc_num"
+}

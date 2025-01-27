@@ -24,6 +24,10 @@ app_license = "mit"
 # webform_include_js = {"doctype": "public/js/doctype.js"}
 # webform_include_css = {"doctype": "public/css/doctype.css"}
 
+doctype_js = {
+    "Sales Pipeline Control" : ["public/js/d3.v7.min.js", "public/js/d3-sankey.min.js"]
+}
+
 # include js in page
 # page_js = {"page" : "public/js/file.js"}
 
@@ -32,6 +36,7 @@ app_license = "mit"
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
+
 
 # Svg Icons
 # ------------------
