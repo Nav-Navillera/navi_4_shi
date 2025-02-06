@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class CBDSheetforSPT(Document):
+class CBDItemsSPC(Document):
 	pass

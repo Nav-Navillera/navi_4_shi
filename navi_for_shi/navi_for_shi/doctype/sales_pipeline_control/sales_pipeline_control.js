@@ -2,7 +2,32 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Sales Pipeline Control', {
+
+    sales_incentive: function (frm) {
+        
+    },
+
+    p_nett_margin: function (frm) {
+        if (!frm.is_updating) {
+            setTimeout(() => frm.events.percent_calc(frm, false, 'p_nett_margin', 'nett_margin', 'cbd_amount'), 100);
+        };
+    },
+
+    nett_margin: function (frm) {
+        if (!frm.is_updating) {
+            setTimeout(() => frm.events.percent_calc(frm, true, 'p_nett_margin', 'nett_margin', 'cbd_amount'), 100);
+        };
+    },
+
     refresh: function (frm) {
+
+        // flag form refresh
+        frm.is_updating = false;
+
+
+
+
+        // DIAGRAM SANKEY
         // Pastikan elemen HTML untuk sankey diagram tersedia
         const sankeyContainerId = "sptc-sankey-d3js";
         const sankeyContainer = document.getElementById(sankeyContainerId);
@@ -56,12 +81,12 @@ frappe.ui.form.on('Sales Pipeline Control', {
             const level5 = {
                 fee_customer: frm.doc.fee_customer || 0,
                 consignment_total: frm.doc.total_consignment || 0,
-                sales_incentive: frm.doc.sales_insentive || 0,
+                sales_incentive: frm.doc.sales_incentive || 0,
                 miscellaneous_expenses: frm.doc.miscellaneous_expenses || 0,
             };
 
             const level6 = {
-                net_margin:
+                nett_margin:
                     level3.remaining_price -
                     (level1.cost_breakdown +
                         level5.fee_customer +
@@ -80,7 +105,7 @@ frappe.ui.form.on('Sales Pipeline Control', {
                     { node: 3, name: "Accepted SQ", category: "Static", display_value: level3.remaining_price},
                     { node: 4, name: "Discount", category: "Out", display_value: level3.discount},
                     { node: 5, name: "Gross Margin", category: "In", display_value: level4.gross_margin   },
-                    { node: 6, name: "Net Margin", category: "In", display_value: level6.net_margin},
+                    { node: 6, name: "Net Margin", category: "In", display_value: level6.nett_margin},
                     { node: 7, name: " ", category: "Static" },
                     { node: 8, name: " ", category: "Static" },
                     { node: 9, name: "Sales Incentive", category: "Out", display_value: level5.sales_incentive },
@@ -97,7 +122,7 @@ frappe.ui.form.on('Sales Pipeline Control', {
                     { source: 2, target: 4, value: level3.discount /2, display_value: level3.discount},
                     { source: 3, target: 5, value: level4.gross_margin /2, display_value: level4.gross_margin},
                     { source: 3, target: 10, value: level4.production_cost /2, display_value: level4.production_cost},
-                    { source: 5, target: 6, value: level6.net_margin/2, display_value: level4.gross_margin},
+                    { source: 5, target: 6, value: level6.nett_margin/2, display_value: level4.gross_margin},
                     { source: 5, target: 7, value: 1 },
                     { source: 5, target: 8, value: 1 },
                     { source: 5, target: 9, value: level5.sales_incentive/2, display_value: level5.sales_incentive},
@@ -324,5 +349,29 @@ frappe.ui.form.on('Sales Pipeline Control', {
             }
         }
         
-    }
+    },
+
+
+    // Utils Function
+
+    percent_calc: function(frm, set_first, percent, amount, base) {
+        if (!frm.is_updating) {
+            console.log(frm.is_updating)
+            frm.is_updating = true;
+            console.log(frm.is_updating)
+            if (set_first == true) {
+                console.log(frm.doc[amount])
+                console.log(frm.doc[base])
+                frm.set_value(percent, (frm.doc[amount] / frm.doc[base])*100).then(() => {
+                    frm.is_updating = false;
+                });
+            } else {
+                frm.set_value(amount, frm.doc[base] * (frm.doc[percent]/100)).then(() => {
+                    frm.is_updating = false;
+                });
+            };
+            console.log(frm.is_updating)
+        };
+    },
+
 });
