@@ -20,8 +20,9 @@
   "sales_name",
   "cost_breakdown_section",
   "cbd_id",
-  "column_break_lgob",
   "cbd_release_date",
+  "column_break_lgob",
+  "description",
   "cost_breakdown_s2",
   "cbd_items",
   "section_break_hdxj",
@@ -32,56 +33,41 @@
   "unit_price",
   "column_break_nkil",
   "cbd_amount",
-  "sales_quotation_section",
-  "initial_sq_column",
-  "sq_init_id",
-  "proposed_sq_release_date",
-  "init_sq_items",
-  "sq_init_amount",
-  "final_sq_column",
-  "sq_final_id",
-  "accepted_sq_date",
-  "final_sq_items",
-  "sq_final_amount",
-  "po_number",
+  "section_break_fyde",
+  "sq_number",
+  "column_break_hlxi",
+  "sq_release_date",
+  "section_break_ukjw",
+  "sq_items",
   "section_break_adxy",
   "column_break_mbqi",
   "_profit",
-  "column_break_bqrm",
   "profit_amount",
-  "column_break_vlez",
+  "column_break_bqrm",
   "discount",
-  "column_break_cave",
   "discount_amount",
-  "section_break_tegn",
-  "column_break_chfs",
-  "column_break_alpk",
-  "column_break_tnba",
-  "p_margin_sq_cbd",
-  "column_break_rust",
+  "column_break_vlez",
+  "sq_price",
+  "sq_final_amount",
+  "column_break_apwf",
+  "p_gross_margin",
   "gross_margin",
   "sales_order_section",
   "sales_order_id",
+  "po_number",
   "column_break_gkqt",
   "so_release_date",
   "section_break_ekzg",
-  "total_consignment",
-  "p_total_consignment",
-  "column_break_hvbs",
-  "fee_customer",
   "p_fee_customer",
-  "column_break_vfkw",
-  "misc_expenses",
+  "fee_customer",
+  "column_break_hvbs",
   "p_misc_expenses",
-  "column_break_dknw",
-  "sales_incentive",
+  "misc_expenses",
+  "column_break_vfkw",
   "p_sales_incentive",
-  "section_break_mwdh",
-  "column_break_rxbd",
-  "column_break_adwn",
-  "column_break_hprm",
+  "sales_incentive",
+  "column_break_dknw",
   "p_nett_margin",
-  "column_break_ulmj",
   "nett_margin"
  ],
  "fields": [
@@ -148,43 +134,18 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "sales_quotation_section",
-   "fieldtype": "Section Break",
-   "hide_border": 1,
-   "label": "Sales Quotation"
-  },
-  {
-   "fieldname": "sq_init_amount",
-   "fieldtype": "Currency",
-   "label": "Amount"
-  },
-  {
    "bold": 1,
+   "description": "Price after discount",
    "fieldname": "sq_final_amount",
    "fieldtype": "Currency",
    "in_list_view": 1,
    "in_preview": 1,
-   "label": "SQ Amount"
-  },
-  {
-   "fieldname": "cbd_items",
-   "fieldtype": "Table",
-   "label": "CBD Items",
-   "options": "CBD Items SPC"
+   "label": "SQ Amount",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_hdxj",
    "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "sq_init_id",
-   "fieldtype": "Data",
-   "label": "SQ Number"
-  },
-  {
-   "fieldname": "sq_final_id",
-   "fieldtype": "Data",
-   "label": "SQ Number"
   },
   {
    "fieldname": "status",
@@ -195,19 +156,8 @@
    "label": "Status"
   },
   {
-   "fieldname": "initial_sq_column",
-   "fieldtype": "Column Break",
-   "label": "Proposed SQ"
-  },
-  {
-   "fieldname": "final_sq_column",
-   "fieldtype": "Column Break",
-   "label": "Accepted SQ"
-  },
-  {
    "fieldname": "section_break_adxy",
-   "fieldtype": "Section Break",
-   "hide_border": 1
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "column_break_mbqi",
@@ -222,21 +172,8 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "column_break_cave",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "init_sq_items",
-   "fieldtype": "Table",
-   "options": "CBD Items SPC"
-  },
-  {
-   "fieldname": "final_sq_items",
-   "fieldtype": "Table",
-   "options": "CBD Items SPC"
-  },
-  {
    "default": "0",
+   "description": "% to SQ Price",
    "fieldname": "discount",
    "fieldtype": "Percent",
    "label": "% Discount",
@@ -274,12 +211,7 @@
   },
   {
    "default": "0",
-   "fieldname": "total_consignment",
-   "fieldtype": "Currency",
-   "label": "Total Consignment"
-  },
-  {
-   "default": "0",
+   "description": "% to CBD",
    "fieldname": "_profit",
    "fieldtype": "Percent",
    "label": "% Profit",
@@ -305,46 +237,6 @@
    "label": "CBD Amount"
   },
   {
-   "fieldname": "section_break_tegn",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_chfs",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_alpk",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_tnba",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_rust",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "section_break_mwdh",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_rxbd",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_adwn",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_hprm",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_ulmj",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "column_break_lgob",
    "fieldtype": "Column Break"
   },
@@ -358,11 +250,6 @@
    "fieldname": "cost_breakdown_s2",
    "fieldtype": "Section Break",
    "hide_border": 1
-  },
-  {
-   "fieldname": "proposed_sq_release_date",
-   "fieldtype": "Date",
-   "label": "Release Date"
   },
   {
    "bold": 1,
@@ -425,35 +312,14 @@
    "label": "Sales Name"
   },
   {
-   "fieldname": "accepted_sq_date",
-   "fieldtype": "Date",
-   "label": "Accepted Date "
-  },
-  {
    "default": "0",
    "fieldname": "sales_incentive",
    "fieldtype": "Currency",
    "label": "Sales Incentive"
   },
   {
-   "bold": 1,
    "default": "0",
-   "description": "% to CBD",
-   "fieldname": "p_margin_sq_cbd",
-   "fieldtype": "Percent",
-   "label": "% Gross Margin",
-   "precision": "2"
-  },
-  {
-   "default": "0",
-   "description": "Total Uang Titip",
-   "fieldname": "p_total_consignment",
-   "fieldtype": "Percent",
-   "label": "% Total Consignment",
-   "precision": "2"
-  },
-  {
-   "default": "0",
+   "description": "% to Gross Margin",
    "fieldname": "p_fee_customer",
    "fieldtype": "Percent",
    "label": "% Fee Customer",
@@ -461,7 +327,7 @@
   },
   {
    "default": "0",
-   "description": "Biaya lain-lain",
+   "description": "% to Gross Margin",
    "fieldname": "p_misc_expenses",
    "fieldtype": "Percent",
    "label": "% Misc. Expenses",
@@ -469,6 +335,7 @@
   },
   {
    "default": "0",
+   "description": "% to Gross Margin",
    "fieldname": "p_sales_incentive",
    "fieldtype": "Percent",
    "label": "% Sales Incentive",
@@ -480,17 +347,20 @@
    "fieldname": "p_nett_margin",
    "fieldtype": "Percent",
    "label": "% Nett. Margin",
-   "precision": "2"
+   "precision": "2",
+   "read_only": 1
   },
   {
    "bold": 1,
    "default": "0",
+   "description": "SQ Amount - CBD",
    "fieldname": "gross_margin",
    "fieldtype": "Currency",
    "in_list_view": 1,
    "in_preview": 1,
    "label": "Gross Margin",
-   "precision": "2"
+   "precision": "2",
+   "read_only": 1
   },
   {
    "bold": 1,
@@ -498,7 +368,8 @@
    "fieldtype": "Currency",
    "in_list_view": 1,
    "in_preview": 1,
-   "label": "Nett. Margin"
+   "label": "Nett. Margin",
+   "read_only": 1
   },
   {
    "description": "In day",
@@ -508,14 +379,78 @@
   },
   {
    "default": "0",
+   "description": "Biaya lain-lain, i.e. uang titip",
    "fieldname": "misc_expenses",
    "fieldtype": "Currency",
-   "label": "Miscellaneous expenses"
+   "label": "Misc. expenses"
+  },
+  {
+   "fieldname": "section_break_fyde",
+   "fieldtype": "Section Break",
+   "hide_border": 1,
+   "label": "Sales Quotation"
+  },
+  {
+   "fieldname": "column_break_hlxi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sq_release_date",
+   "fieldtype": "Date",
+   "label": "Release Date"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description",
+   "max_height": "100px"
+  },
+  {
+   "fieldname": "sq_number",
+   "fieldtype": "Data",
+   "label": "SQ Number"
+  },
+  {
+   "description": "Price before discount",
+   "fieldname": "sq_price",
+   "fieldtype": "Currency",
+   "label": "SQ Price"
+  },
+  {
+   "fieldname": "column_break_apwf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "bold": 1,
+   "default": "0",
+   "description": "% to CBD",
+   "fieldname": "p_gross_margin",
+   "fieldtype": "Percent",
+   "label": "% Gross Margin",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cbd_items",
+   "fieldtype": "Table",
+   "label": "CBD Items",
+   "options": "CBD Items SPC"
+  },
+  {
+   "fieldname": "section_break_ukjw",
+   "fieldtype": "Section Break",
+   "hide_border": 1
+  },
+  {
+   "fieldname": "sq_items",
+   "fieldtype": "Table",
+   "label": "SQ Items",
+   "options": "SQ Items SPC"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-06 22:07:41.949848",
+ "modified": "2025-02-13 01:51:58.240478",
  "modified_by": "Administrator",
  "module": "Navi for SHI",
  "name": "Sales Pipeline Control",

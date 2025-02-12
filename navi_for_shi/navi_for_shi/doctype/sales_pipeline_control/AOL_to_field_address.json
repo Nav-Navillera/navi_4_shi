@@ -1,0 +1,57 @@
+{
+    "doc_id": "so_data.d.number",
+    "status": "so_data.d.statusName",
+    "term_of_payment" : "so_data.d.paymentTerm.netDays",
+    "customer_name": "so_data.d.customer.name",
+    "type": "", // didapat dari parsing doc_id
+    "sales_name": "so_data.d.charField9",
+    "cbd_id": "sq_data.d.charField8",
+    "cbd_release_date": "",
+    "description": "so_data.d.description",
+    "cbd_items": [{ // child table
+        "job_name": "so_data.d.detailItem[i].detailName",
+        "quantity": "so_data.d.detailItem[i].quantity",
+        "uom": "so_data.d.detailItem[i].itemUnit.name",
+        "cost_per_uom": "so_data.d.detailItem[i].numericField6", 
+        "amount": "so_data.d.detailItem[i].totalPrice" // quantity * cost_per_uom
+    },{
+        "job_name": "so_data.d.detailItem[i].detailName",
+        "quantity": "so_data.d.detailItem[i].quantity",
+        "uom": "so_data.d.detailItem[i].itemUnit.name",
+        "cost_per_uom": "so_data.d.detailItem[i].numericField6",
+        "amount": "so_data.d.detailItem[i].totalPrice" // quantity * cost_per_uom
+    }],
+    "quantity": "1", //default
+    "uom": "Set",  //default
+    "unit_price": "", // sum of cbd_items amount
+    "cbd_amount": "", // unit_price * quantity
+    "sq_number": "sq_data.d.number", 
+    "sq_release_date": "sq_data.d.transdate",
+    "sq_items": [{
+        "job_name": "so_data.d.detailItem[i].detailName",
+        "quantity": "so_data.d.detailItem[i].quantity",
+        "uom": "so_data.d.detailItem[i].itemUnit.name",
+        "item_price_per_uom": "so_data.d.detailItem[i].numericField6",
+        "_discount": "", // persentase diskon (discount/sq_item_amount)
+        "discount":  "so_data.d.detailItem[i].itemCashDiscount",
+        "sq_item_amount": "so_data.d.detailItem[i].totalPrice" // quantity * cost_per_uom
+    },{
+        "job_name": "so_data.d.detailItem[i].detailName",
+        "quantity": "so_data.d.detailItem[i].quantity",
+        "uom": "so_data.d.detailItem[i].itemUnit.name",
+        "item_price_per_uom": "so_data.d.detailItem[i].numericField6",
+        "_discount": "", // persentase diskon (discount/sq_item_amount)
+        "discount":  "so_data.d.detailItem[i].itemCashDiscount",
+        "sq_item_amount": "so_data.d.detailItem[i].totalPrice" // quantity * cost_per_uom
+    }],
+    "sq_price": "", // sum of sq_items[item_price_per_uom]
+    "discount_amount": "", // sum of sq_items[discount]
+    "discount": "", //discount_amount / sq_price
+    "profit_amount": "", // sq_price -  cbd_amount
+    "_profit": "", // profit_amount / cbd_amount
+    "sq_final_amount": "", // sq_price - discount_amount
+    "gross_margin": "" , // sq_final_amount - cbd_amount
+    "p_gross_margin": "", // gross_margin / cbd_amount
+    "so_number": "so_data.d.number", 
+    "so_release_date": "so_data.d.transdate"
+}

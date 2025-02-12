@@ -9,13 +9,85 @@ frappe.ui.form.on('Sales Pipeline Control', {
 
     p_nett_margin: function (frm) {
         if (!frm.is_updating) {
-            setTimeout(() => frm.events.percent_calc(frm, false, 'p_nett_margin', 'nett_margin', 'cbd_amount'), 100);
+            setTimeout(() => frm.events.percent_calc(frm, false, 'p_nett_margin', 'nett_margin', 'cbd_amount'), 50);
         };
     },
 
     nett_margin: function (frm) {
         if (!frm.is_updating) {
-            setTimeout(() => frm.events.percent_calc(frm, true, 'p_nett_margin', 'nett_margin', 'cbd_amount'), 100);
+            setTimeout(() => frm.events.percent_calc(frm, true, 'p_nett_margin', 'nett_margin', 'cbd_amount'), 50);
+        };
+    },
+
+    _profit: function (frm) {
+        if (!frm.is_updating) {
+            setTimeout(() => frm.events.percent_calc(frm, false, '_profit', 'profit_amount', 'cbd_amount'), 50);
+        };
+    },
+
+    profit_amount: function (frm) {
+        if (!frm.is_updating) {
+            setTimeout(() => frm.events.percent_calc(frm, true, '_profit', 'profit_amount', 'cbd_amount'), 50);
+        };
+    },
+
+    discount: function (frm) {
+        if (!frm.is_updating) {
+            setTimeout(() => frm.events.percent_calc(frm, false, 'discount', 'discount_amount', 'sq_final_amount'), 50);
+        };
+    },
+
+    discount_amount: function (frm) {
+        if (!frm.is_updating) {
+            setTimeout(() => frm.events.percent_calc(frm, true, 'discount', 'discount_amount', 'sq_final_amount'), 50);
+        };
+    },
+
+    p_gross_margin: function (frm) {
+        if (!frm.is_updating) {
+            setTimeout(() => frm.events.percent_calc(frm, false, 'p_gross_margin', 'gross_margin', 'cbd_amount'), 50);
+        };
+    },
+
+    gross_margin: function (frm) {
+        if (!frm.is_updating) {
+            setTimeout(() => frm.events.percent_calc(frm, true, 'p_gross_margin', 'gross_margin', 'cbd_amount'), 50);
+        };
+    },
+
+    p_fee_customer: function (frm) {
+        if (!frm.is_updating) {
+            setTimeout(() => frm.events.percent_calc(frm, false, 'p_fee_customer', 'fee_customer', 'gross_margin'), 50);
+        };
+    },
+
+    fee_customer: function (frm) {
+        if (!frm.is_updating) {
+            setTimeout(() => frm.events.percent_calc(frm, true, 'p_fee_customer', 'fee_customer', 'gross_margin'), 50);
+        };
+    },
+
+    p_misc_expenses: function (frm) {
+        if (!frm.is_updating) {
+            setTimeout(() => frm.events.percent_calc(frm, false, 'p_misc_expenses', 'misc_expenses', 'gross_margin'), 50);
+        };
+    },
+
+    misc_expenses: function (frm) {
+        if (!frm.is_updating) {
+            setTimeout(() => frm.events.percent_calc(frm, true, 'p_misc_expenses', 'misc_expenses', 'gross_margin'), 50);
+        };
+    },
+
+    p_sales_incentive: function (frm) {
+        if (!frm.is_updating) {
+            setTimeout(() => frm.events.percent_calc(frm, false, 'p_sales_incentive', 'sales_incentive', 'gross_margin'), 50);
+        };
+    },
+
+    sales_incentive: function (frm) {
+        if (!frm.is_updating) {
+            setTimeout(() => frm.events.percent_calc(frm, true, 'p_sales_incentive', 'sales_incentive', 'gross_margin'), 50);
         };
     },
 
@@ -112,8 +184,8 @@ frappe.ui.form.on('Sales Pipeline Control', {
                     { node: 10, name: "COGS", category: "Static", display_value: level4.production_cost},
                     { node: 11, name: " ", category: "Out" },
                     { node: 12, name: "Customer Fee", category: "Out", display_value: level5.fee_customer},
-                    { node: 13, name: "Total Consignment", category: "Out", display_value: level5.consignment_total},
-                    { node: 14, name: "Other Expenses", category: "Out", display_value: level5.miscellaneous_expenses },
+                    //{ node: 13, name: "Total Consignment", category: "Out", display_value: level5.consignment_total},
+                    { node: 13, name: "Other Expenses", category: "Out", display_value: level5.miscellaneous_expenses },
                 ],
                 links: [
                     { source: 0, target: 2, value: level1.profit_margin/2, display_value: level1.profit_margin },
@@ -126,14 +198,14 @@ frappe.ui.form.on('Sales Pipeline Control', {
                     { source: 5, target: 7, value: 1 },
                     { source: 5, target: 8, value: 1 },
                     { source: 5, target: 9, value: level5.sales_incentive/2, display_value: level5.sales_incentive},
-                    { source: 5, target: 14, value: level5.miscellaneous_expenses/2, display_value: level5.miscellaneous_expenses},
+                    { source: 5, target: 13, value: level5.miscellaneous_expenses/2, display_value: level5.miscellaneous_expenses},
                     { source: 5, target: 12, value: level5.fee_customer/2, display_value: level5.fee_customer},
-                    { source: 5, target: 13, value: level5.consignment_total/2, display_value: level5.consignment_total},
+                    // { source: 5, target: 13, value: level5.consignment_total/2, display_value: level5.consignment_total},
                     { source: 4, target: 11, value: 0 },
                     { source: 7, target: 11, value: 0 },
                     { source: 8, target: 11, value: 0 },
                     { source: 9, target: 11, value: 0 },
-                    { source: 14, target: 11, value: 0 },
+                    { source: 13, target: 11, value: 0 },
                     { source: 10, target: 11, value: 0 },
                     { source: 12, target: 11, value: 0 },
                     { source: 13, target: 11, value: 0 },

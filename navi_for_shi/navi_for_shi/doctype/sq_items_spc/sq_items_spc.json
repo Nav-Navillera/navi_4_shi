@@ -1,0 +1,102 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-02-13 01:45:59.595530",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sq_item_details_section",
+  "job_name",
+  "column_break_qfft",
+  "quantity",
+  "uom",
+  "item_price_per_uom",
+  "_discount",
+  "discount",
+  "sq_item_amount"
+ ],
+ "fields": [
+  {
+   "fieldname": "sq_item_details_section",
+   "fieldtype": "Section Break",
+   "label": "SQ Item Details"
+  },
+  {
+   "columns": 2,
+   "fieldname": "job_name",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Job Name"
+  },
+  {
+   "fieldname": "column_break_qfft",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 1,
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Quantity",
+   "precision": "2"
+  },
+  {
+   "columns": 1,
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "UoM",
+   "options": "UOM"
+  },
+  {
+   "columns": 2,
+   "fieldname": "item_price_per_uom",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Item Price per UoM",
+   "precision": "2"
+  },
+  {
+   "columns": 1,
+   "fieldname": "_discount",
+   "fieldtype": "Percent",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "% Discount"
+  },
+  {
+   "columns": 1,
+   "fieldname": "discount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "Discount",
+   "precision": "2"
+  },
+  {
+   "columns": 2,
+   "fieldname": "sq_item_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "in_preview": 1,
+   "label": "SQ Item Amount"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-02-13 01:50:46.597273",
+ "modified_by": "Administrator",
+ "module": "Navi for SHI",
+ "name": "SQ Items SPC",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

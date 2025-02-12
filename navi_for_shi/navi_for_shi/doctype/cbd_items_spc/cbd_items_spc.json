@@ -18,7 +18,7 @@
   {
    "fieldname": "cbd_sheet_details_section",
    "fieldtype": "Section Break",
-   "label": "CBD Sheet Details"
+   "label": "CBD Item Details"
   },
   {
    "fieldname": "column_break_sxag",
@@ -59,7 +59,7 @@
    "fieldname": "amount",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Amount",
+   "label": "CBD Item Amount",
    "non_negative": 1,
    "precision": "2"
   }
@@ -67,7 +67,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-02-06 16:21:24.317084",
+ "modified": "2025-02-13 01:42:32.847409",
  "modified_by": "Administrator",
  "module": "Navi for SHI",
  "name": "CBD Items SPC",
